@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Projeto de Inscrição - Programação Web UEPA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introdução
 
-## Available Scripts
+Este projeto foi desenvolvido utilizando React no front-end e Node.js no back-end. O projeto faz parte da avaliação da matéria de Programação Web da Universidade do Estado do Pará (UEPA). O objetivo do sistema é fornecer uma plataforma para inscrição em processos seletivos, permitindo aos usuários preencher um formulário com seus dados pessoais e anexar os documentos necessários.
 
-In the project directory, you can run:
+## Estrutura do Projeto
 
-### `npm start`
+A estrutura do projeto é organizada em diferentes componentes para facilitar a manutenção e a escalabilidade. Abaixo, segue a descrição dos principais componentes e arquivos do projeto:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Componentes Principais
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **FormPage.jsx**
+   - Este componente é responsável por renderizar o formulário de inscrição e gerenciar a validação e submissão dos dados.
+   
+2. **Menu.jsx**
+   - Componente responsável pela renderização do menu de navegação.
+   
+3. **Footer.jsx**
+   - Componente responsável pela renderização do rodapé do site.
 
-### `npm test`
+## Dependências
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O projeto utiliza várias dependências para gerenciar formulários, validação e notificações. As principais dependências são:
 
-### `npm run build`
+- **react-hook-form**: Biblioteca para gerenciamento de formulários.
+- **@hookform/resolvers**: Integração de resolvers com bibliotecas de validação, como `yup`.
+- **yup**: Biblioteca de validação de esquemas.
+- **react-input-mask**: Biblioteca para aplicar máscaras de entrada em campos de formulário.
+- **axios**: Cliente HTTP para fazer requisições ao servidor.
+- **react-toastify**: Biblioteca para exibição de notificações.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estrutura do Formulário
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O formulário é composto por vários campos, cada um com suas próprias regras de validação definidas usando `yup`. A seguir estão os campos e suas validações:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Nome**
+   - Requerido.
+   
+2. **CPF**
+   - Requerido.
+   - Deve seguir o formato `000.000.000-00`.
+   
+3. **Email**
+   - Requerido.
+   - Deve ser um endereço de email válido.
+   
+4. **Telefone**
+   - Requerido.
+   - Deve seguir o formato `(00) 00000-0000`.
+   
+5. **Cargo**
+   - Requerido.
+   - Deve ser uma das opções disponíveis.
+   
+6. **Currículo**
+   - Requerido.
+   - Deve ser um arquivo PDF com tamanho máximo de 15MB.
+   
+7. **Termos de Uso**
+   - Requerido.
+   - O usuário deve aceitar os termos de uso.
+   
+8. **Data de Nascimento**
+   - Requerido.
+   - Deve ser uma data válida e não pode ser no futuro.
+   
+9. **Sexo**
+   - Requerido.
+   - Deve ser uma das opções: feminino, masculino, outro.
 
-### `npm run eject`
+## Funcionalidades
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Validação de Formulário**: Usando `react-hook-form` e `yup`, o formulário valida todos os campos antes de permitir a submissão.
+- **Máscaras de Entrada**: Aplicação de máscaras nos campos de CPF e telefone usando `react-input-mask`.
+- **Envio de Dados**: Os dados são enviados ao back-end usando `axios`.
+- **Notificações**: Notificações de sucesso ou erro são exibidas usando `react-toastify`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Fluxo de Submissão do Formulário
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. O usuário preenche todos os campos do formulário.
+2. Ao clicar no botão de envio, o formulário é validado.
+3. Se a validação for bem-sucedida, os dados são formatados e enviados ao servidor usando `axios`.
+4. Com base na resposta do servidor, uma notificação de sucesso ou erro é exibida.
+5. Em caso de sucesso, o formulário é resetado.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Personalização e Estilo
 
-## Learn More
+- O estilo do formulário é definido no arquivo `styles.css`.
+- As imagens e ícones utilizados no projeto estão armazenados na pasta `assets`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Estrutura de Arquivos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+/src
+/assets
+- uepaFoto.png
+/components
+- Footer.jsx
+- Menu.jsx
+- FormPage.jsx
+/styles
+- styles.css
 
-### Code Splitting
+index.js
+App.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Conclusão
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este projeto exemplifica a integração de várias bibliotecas e ferramentas para criar uma aplicação web funcional e responsiva. A utilização de `react-hook-form` para gerenciamento de formulários, `yup` para validação de dados, e `axios` para comunicação com o back-end são algumas das práticas adotadas para garantir a robustez e a usabilidade do sistema.
 
-### Making a Progressive Web App
+## Como Executar o Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Clone o repositório.
+2. Instale as dependências usando `npm install`.
+3. Execute a aplicação com `npm start`.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para mais detalhes, consulte a documentação das bibliotecas utilizadas.
