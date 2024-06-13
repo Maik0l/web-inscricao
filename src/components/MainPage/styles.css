@@ -1,0 +1,63 @@
+.body-background {
+  margin-top: 64px;
+  height: 100vh;
+  background-image: url(/src/assets/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.float-box {
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  left: 60px;
+  background-color: white;
+  width: 500px;
+  padding: 10px 0px 40px 0px;
+}
+
+.float-box p {
+  font-size: 64px;
+  color: #1b1e6e;
+  font-weight: 500;
+}
+
+.float-box-buttons {
+  margin-top: 30px;
+}
+
+.float-box-button-1 {
+  background-color: #2e3192;
+  color: white;
+  padding: 10px;
+  border: 2px solid #2e3192;
+  outline: 0;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-right: 2px;
+}
+
+.float-box-button-1:hover {
+  background-color: white;
+  color: #2e3192;
+  border: 2px solid #2e3192;
+}
+
+.float-box-button-2 {
+  background-color: white;
+  color: #1b1e6e;
+  padding: 10px;
+  border: 2px solid #2e3192;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.float-box-button-2:hover {
+  background-color: #2e3192;
+  color: white;
+}

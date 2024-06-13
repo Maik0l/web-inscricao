@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #2e3192;
+}
+
+.header-links {
+  width: 40%;
+}
+
+.header-links ul {
+  display: flex;
+  justify-content: space-around;
+  color: #1b1e6e;
+  cursor: pointer;
+}
+
+.menu-link:visited {
+  color: #1b1e6e;
+}
+
+.header-image {
+  width: 60%;
+}
+
+.header-image img {
+  width: 160px;
+}
